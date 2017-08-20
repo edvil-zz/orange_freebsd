@@ -2,14 +2,14 @@
 
 #### Hardware
 
-Un pc avec au minimum 2 interfaces r√seaux.
+Un pc avec au minimum 2 interfaces reseaux.
 
-J'ai opt√© pour un mini-pc qotom:
-[http://www.qotom.net/]
+J'ai opte pour un mini-pc qotom:
+http://www.qotom.net/
 
 #### Software
 
-Freebsd: [http://www.freebsd.org]
+Freebsd: http://www.freebsd.org
 
 #### Configuration
 
