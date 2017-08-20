@@ -1,10 +1,9 @@
-# Setup un routeur freebsd avec une connexion Orange Fibre.
+### Routeur freebsd avec Orange Fibre.
 
 #### Hardware
 
 Un pc avec au minimum 2 interfaces reseaux.
 
-J'ai opte pour un mini-pc qotom:
 http://www.qotom.net/
 
 #### Software
@@ -13,11 +12,23 @@ Freebsd: http://www.freebsd.org
 
 #### Configuration
 
-1. Configuration systeme
+igb0: interface connectee a l'ONT orange
+igb1: interface LAN
 
-2. Configuration ipv4
+##### Configuration ipv4
 
-3. Configuration ipv6
+`/etc/rc.conf`:
 
-4. Configuration TV
+```
+ifconfig_igb0="up"
+vlans_igb0="832 838 840"
+ifconfig_igb0_832="DHCP vlanpcp 0"
+ifconfig_igb0_838="DHCP vlanpcp 4"
+ifconfig_igb0_840="inet 192.168.255.254 netmask 255.255.255.255 vlanpcp 5"
+ifconfig_igb1="inet 192.168.1.1 netmask 255.255.255.0"
+```
+
+##### NAT/FW
+
+##### Configuration TV
 
