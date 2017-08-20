@@ -13,6 +13,7 @@ Freebsd: http://www.freebsd.org
 #### Configuration
 
 igb0: interface connectee a l'ONT orange
+
 igb1: interface LAN
 
 ##### Configuration ipv4
