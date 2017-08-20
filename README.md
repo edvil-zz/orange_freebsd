@@ -51,6 +51,7 @@ Il faut donc recompiler le client dhcp avec le patch suivant:
 checkout les sources:
 `svn checkout https://svn.freebsd.org/base/releng/11.1 /usr/src`
 
+
 Patche le client dhcp:
 
 ```diff
@@ -65,6 +66,13 @@ Patche le client dhcp:
         DHO_MASK_SUPPLIER,
         DHO_ROUTER_DISCOVERY,
 ```
+`cd /usr/src/sbin/dhclient/`
+
+`patch < orange.patch`
+
+`make`
+
+`cp dhclient /sbin`
 
 ##### NAT/FW
 
