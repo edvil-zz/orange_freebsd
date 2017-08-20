@@ -41,7 +41,7 @@ interface "igb0.832" {
     initial-interval 1;
     send dhcp-class-identifier "sagem";
     send user-class "+FSVDSL_livebox.Internet.softathome.Livebox4";
-    send option-90 00:00:00:00:00:00:00:00:00:00:00:66:74:69:2f:75:75:7a:72:64:68:64;
+    send option-90 00:00:00:00:00:00:00:00:00:00:00:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX;
 }
 ```
 
