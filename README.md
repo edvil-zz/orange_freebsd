@@ -53,7 +53,7 @@ checkout les sources:
 `svn checkout https://svn.freebsd.org/base/releng/11.1 /usr/src`
 
 
-Patche le client dhcp:
+Patcher le client dhcp:
 
 ```diff
 --- tables.c    2017-07-29 16:53:19.483075000 +0200
@@ -77,5 +77,40 @@ Patche le client dhcp:
 
 ##### NAT/FW
 
+To be improved.
+
+
+`/etc/pf.conf`
+
+
+```
+#interfaces
+ext_if="em0.832"
+tv_if="em0.840"
+int_if="em1"
+
+#options
+table <lan_v6> persist
+set skip on lo
+scrub in
+
+#nat
+nat on $ext_if inet from 192.168.1.0/24 -> ($ext_if)
+
+#filters
+block log
+pass keep state
+pass quick proto ipv6-icmp from any to any
+pass in log quick proto tcp from xxx.xxx.xxx.xxx to any port ssh flags S/SA keep state
+pass out quick on $ext_if inet from 192.168.1.0/24 keep state
+
+#ip6 
+pass out quick on $ext_if inet6 keep state
+pass in quick on $ext_if inet6 from fe80::ba0:bab keep state
+```
+
 ##### Configuration TV
 
+##### Configuration ip6
+
+https://github.com/tomaszmrugalski/dibbler
